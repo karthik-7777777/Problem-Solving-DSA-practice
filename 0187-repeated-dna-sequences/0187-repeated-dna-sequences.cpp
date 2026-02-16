@@ -2,9 +2,6 @@ class Solution {
 public:
     vector<string> findRepeatedDnaSequences(string s) {
         vector<string>ans;
-        // if(s.size()<=10){
-        //     return ans;
-        // }
         string st;
         map<string,int>mp;
         for(int i=0;i<10;i++){
