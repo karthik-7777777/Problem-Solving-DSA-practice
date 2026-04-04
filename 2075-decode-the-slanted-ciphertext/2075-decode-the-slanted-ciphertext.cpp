@@ -12,10 +12,9 @@ public:
                 idx+=(col+1);
             }
         }
-        int st=0,en=ans.size()-1;
-        // while(ans[st]==' ')st++;
+        int en=ans.size()-1;
         while(ans[en]==' ')en--;
-        string result=ans.substr(st,en-st+1);
+        string result=ans.substr(0,en+1);
         return result;
     }
 };  
