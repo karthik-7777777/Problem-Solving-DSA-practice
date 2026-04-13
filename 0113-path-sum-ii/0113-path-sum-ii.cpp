@@ -30,6 +30,7 @@ void preorder(TreeNode* root, int ts,vector<vector<int>>&ps,int sum,vector<int> 
     vector<vector<int>> pathSum(TreeNode* root, int ts) {
         vector<vector<int>>ps;
         vector<int>p;
+        if(!root)return ps;
         p.push_back(root->val);
         preorder(root,ts,ps,root->val,p);
         return ps;
