@@ -17,7 +17,7 @@ void dfs(TreeNode* root,int &sum){
     sum+=root->val;
     root->val=sum;
     if(root->left)dfs(root->left,sum);
-    return;
+    // return;
 }
     TreeNode* convertBST(TreeNode* root) {
         if(!root)return root;
