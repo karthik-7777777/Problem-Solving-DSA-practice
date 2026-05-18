@@ -16,7 +16,7 @@ public:
                 }
                 l=r;
                 r++;
-                if(r<n)diff=nums[l]-nums[r];
+                diff=nums[l]-nums[r];
             }
         }
         if((r-l+1)>2){
