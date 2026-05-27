@@ -1,7 +1,7 @@
 class Solution {
 public:
     int numberOfSpecialChars(string word) {
-        map<char,pair<int,int>>mp;
+        unordered_map<char,pair<int,int>>mp;
         int ans=0;
         for(int i=0;i<word.size();i++){
             if(word[i]>='a' && word[i]<='z'){
@@ -24,17 +24,6 @@ public:
                 }
             }
         }
-        // for(auto i:word){
-        //     if(i>='a' && i<='z'){
-        //         if(mp.find(i)==mp.end())mp[i]=0;
-        //         else continue;
-        //     }
-        //     else if(i>='A' && i<='Z'){
-        //         char ch=i+32;
-        //         if(mp.find(ch)!=mp.end())mp[ch]=1;
-        //         else continue;
-        //     }
-        // }
         for(auto i:mp){
             if(i.second.first<i.second.second)ans+=1;
         }
