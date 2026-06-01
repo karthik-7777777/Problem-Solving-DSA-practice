@@ -8,7 +8,6 @@ public:
             ans+=cost[i];
             cout << ans << " ";
             if(i+1 < cost.size())ans+=cost[i+1];
-            cout << ans << endl;
             i+=3;
         }
         return ans;
