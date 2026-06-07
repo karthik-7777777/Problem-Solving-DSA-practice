@@ -49,12 +49,6 @@ TreeNode* fun(unordered_map<int,pair<int,int>>& nodes,vector<vector<int>>& des,i
             }
         }
         TreeNode* root=fun(nodes,des,rt);
-        // if(nodes[rt].first != 0){
-        //     root->left=fun(nodes,des,nodes[rt].first);
-        // }
-        // if(nodes[rt].second != 0){
-        //     root->right=fun(nodes,des,nodes[rt].second);
-        // }
         return root;
     }
 };
