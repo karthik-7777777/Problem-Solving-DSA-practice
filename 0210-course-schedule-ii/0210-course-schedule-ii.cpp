@@ -5,21 +5,11 @@ public:
         for(auto it:prerequisites){
             adj[it[1]].push_back(it[0]);
         }
-        for(int j=0;j<adj.size();j++){
-            cout << j << "-->";
-            for(int i=0;i<adj[j].size();i++){
-                cout << adj[j][i] <<" ";
-            }
-            cout << endl;
-        }
         vector<int>indeg(numCourses,0);
         for(auto it:adj){
             for(int i=0;i<it.size();i++){
                 indeg[it[i]]++;
             }
-        }
-        for(int i=0;i<indeg.size();i++){
-            cout << indeg[i] << " ";
         }
         queue<int>q;
         for(int i=0;i<indeg.size();i++){
