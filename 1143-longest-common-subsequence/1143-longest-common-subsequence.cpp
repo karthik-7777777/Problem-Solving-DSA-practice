@@ -1,6 +1,6 @@
 class Solution {
 public:
-int rec(string& text1, string& text2,int idx1,int idx2,vector<vector<int>>&dp){
+int rec(const string& text1,const string& text2,int idx1,int idx2,vector<vector<int>>&dp){
     if(idx1<0 || idx2<0){
         return 0;
     }
