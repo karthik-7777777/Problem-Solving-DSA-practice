@@ -1,15 +1,21 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        int l=0,ans=0;
-        vector<int>freq(256,0);
-        for(int i=0;i<s.size();i++){
-            freq[s[i]]++;
-            while(freq[s[i]]>1){
-                freq[s[l]]--;
-                l++;
+        int l=0,r=0,n=s.size();
+        int ans=0;
+        unordered_set<char>st;
+        while(l<n && r<n){
+            if(st.find(s[r])==st.end()){
+                st.insert(s[r]);
+                ans=max(ans,r-l+1);
+                r++;
             }
-            ans=max(ans,i-l+1);
+            else{
+                while(st.find(s[r])!=st.end()){
+                    st.erase(s[l]);
+                    l++;
+                }
+            }
         }
         return ans;
     }
@@ -17,4 +23,4 @@ public:
 
 // Synced seamlessly with LeetHub Pro
 // Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
-// Get it here: https://chromewebstore.google.com/detail/leethub-v4/bcilpkkbokcopmabingnndookdogmbna
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
