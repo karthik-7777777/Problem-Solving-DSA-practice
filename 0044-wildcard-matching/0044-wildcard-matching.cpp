@@ -14,10 +14,7 @@ int fun(const string& s,const string& p,int idx1,int idx2,vector<vector<int>>&dp
         return 1;
     }
     if(dp[idx1][idx2]!=-1)return dp[idx1][idx2];
-    if(s[idx1]==p[idx2]){
-        return dp[idx1][idx2]=fun(s,p,idx1-1,idx2-1,dp);
-    }
-    else if(s[idx1]!=p[idx2] && p[idx2]=='?'){
+    if(s[idx1]==p[idx2] ||p[idx2]=='?'){
         return dp[idx1][idx2]=fun(s,p,idx1-1,idx2-1,dp);
     }
     else if(s[idx1]!=p[idx2] && p[idx2]=='*'){
