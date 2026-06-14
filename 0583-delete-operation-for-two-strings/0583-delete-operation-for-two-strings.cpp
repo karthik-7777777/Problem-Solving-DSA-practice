@@ -1,6 +1,6 @@
 class Solution {
 public:
-int fun(string word1, string word2,int idx1,int idx2,vector<vector<int>>&dp){
+int fun(string& word1, string& word2,int idx1,int idx2,vector<vector<int>>&dp){
     if(idx1<0 || idx2<0)return 0;
     if(dp[idx1][idx2]!=-1)return dp[idx1][idx2];
     if(word1[idx1]==word2[idx2]){
