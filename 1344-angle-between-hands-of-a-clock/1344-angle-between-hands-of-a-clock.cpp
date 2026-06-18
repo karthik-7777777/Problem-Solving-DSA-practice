@@ -7,7 +7,6 @@ public:
         double temp=(minutes/60.0)*5.0;
         h=(h+temp)*6;
         double m=minutes*6.0;
-        cout << h << " " << m << endl;
         return min(abs(h-m),360.0-abs(h-m));
     }
 };
