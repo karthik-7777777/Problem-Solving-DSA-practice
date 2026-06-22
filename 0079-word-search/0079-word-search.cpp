@@ -1,7 +1,7 @@
 class Solution {
 public:
-void trav(vector<vector<char>>& board,string &word,string str,int idx,int row,int col,bool &chk){
-    if(str==word && str.size()==word.size()){
+void trav(vector<vector<char>>& board,string word,int idx,int row,int col,bool &chk){
+    if(idx==word.size()){
         chk=true;
         return;
     }
@@ -11,10 +11,10 @@ void trav(vector<vector<char>>& board,string &word,string str,int idx,int row,in
     if(board[row][col]==word[idx]){
         char ch=board[row][col];
         board[row][col]='.';
-        trav(board,word,str+ch,idx+1,row,col+1,chk);
-        trav(board,word,str+ch,idx+1,row,col-1,chk);
-        trav(board,word,str+ch,idx+1,row+1,col,chk);
-        trav(board,word,str+ch,idx+1,row-1,col,chk);
+        trav(board,word,idx+1,row,col+1,chk);
+        trav(board,word,idx+1,row,col-1,chk);
+        trav(board,word,idx+1,row+1,col,chk);
+        trav(board,word,idx+1,row-1,col,chk);
         board[row][col]=ch;
     }
 }
@@ -27,11 +27,10 @@ void trav(vector<vector<char>>& board,string &word,string str,int idx,int row,in
                 if(board[i][j]==word[idx]){
                     char ch=board[i][j];
                     board[i][j]='.';
-                    string str="";
-                    trav(board,word,str+ch,idx+1,i,j+1,chk);
-                    trav(board,word,str+ch,idx+1,i,j-1,chk);
-                    trav(board,word,str+ch,idx+1,i+1,j,chk);
-                    trav(board,word,str+ch,idx+1,i-1,j,chk);
+                    trav(board,word,idx+1,i,j+1,chk);
+                    trav(board,word,idx+1,i,j-1,chk);
+                    trav(board,word,idx+1,i+1,j,chk);
+                    trav(board,word,idx+1,i-1,j,chk);
                     board[i][j]=ch;
                 }
             }
