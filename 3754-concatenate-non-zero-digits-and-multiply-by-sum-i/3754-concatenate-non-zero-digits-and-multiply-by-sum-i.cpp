@@ -8,9 +8,6 @@ public:
             if(k!=0)dig.push_back(k);
             n/=10;
         }
-        for(int i=0;i<dig.size();i++){
-            cout << dig[i] << " ";
-        }
         int size=dig.size()-1;
         for(int i=size;i>=0;i--){
             ans=(ans*10)+dig[i];
