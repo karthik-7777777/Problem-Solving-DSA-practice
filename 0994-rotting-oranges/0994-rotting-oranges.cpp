@@ -4,12 +4,15 @@ public:
         vector<pair<int,int>>rot;
         int n=grid.size(),m=grid[0].size();
         queue<pair<int,int>>q;
+        vector<vector<int>>vis(n,vector<int>(m,0));
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                if(grid[i][j]==2)q.push({i,j});
+                if(grid[i][j]==2){
+                    vis[i][j]=1;
+                    q.push({i,j});
+                }
             }
         }
-        vector<vector<int>>vis(n,vector<int>(m,0));
         int ans=0;
         while(!q.empty()){
             int size=q.size();
