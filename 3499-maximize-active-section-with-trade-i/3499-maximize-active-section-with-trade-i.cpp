@@ -42,8 +42,8 @@ public:
                     else zeros-=temp[l];
                     l++;
                 }
-                if((x-ones)+(ones+zeros)>=ans){
-                    ans=(x-ones)+(ones+zeros);
+                if(x+zeros>=ans){
+                    ans=x+zeros;
                 }
                 i++;
             }
